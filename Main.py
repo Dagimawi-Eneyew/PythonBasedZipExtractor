@@ -2,7 +2,8 @@
 from tkinter import *
 # importing filedialog module 
 from tkinter import filedialog 
-
+#import scrolled text
+from tkinter import scrolledtext
 
 #function to explore and select folder
 def selectFolder(): 
@@ -35,3 +36,23 @@ explore_Button = Button(window,  text = "Browse Files", command = browseFiles)
 
 #application exit button  
 exit_Button = Button(window,  text = "Exit", command = close_window)  
+
+#Text are to display the logs
+text_area = scrolledtext.ScrolledText(window, width = 80,  height = 20) 
+
+#progress Log title 
+progress_Log = Label(window,  text = "Progress Log...", width = 60, height = 4,  fg = "black",font = ("Times New Roman", 
+                                              15)) 
+
+#creating the root window
+window = Tk() 
+
+# Window title 
+window.title('Zip File Extractor') 
+   
+# Set window size 
+window.geometry("700x500") 
+   
+#Set window background color 
+window.config(background = "white") 
+
