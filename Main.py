@@ -56,3 +56,15 @@ window.geometry("700x500")
 #Set window background color 
 window.config(background = "white") 
 
+#Adjust the location of GUI elements
+path_Label.grid(column = 1, row = 1) 
+explore_Button.grid(column = 1, row = 2) 
+progress_Log.grid(column=1,row=3)
+text_area.grid(column=1,row=4)
+button_exit.grid(column = 1,row = 8) 
+
+#Make the window unresizable
+window.resizable(width=0,height=0)
+
+#Window main loop 
+window.mainloop() 
