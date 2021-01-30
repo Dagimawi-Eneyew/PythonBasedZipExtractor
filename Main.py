@@ -25,3 +25,13 @@ def close_window ():
     '''
     window.destroy()   
 
+
+# Create GUI elements
+#label to hold the path string
+path_Label = Label(window, text = "Folder not selected !", width = 100, height = 4,  fg = "blue") 
+   
+#explore window button  
+explore_Button = Button(window,  text = "Browse Files", command = browseFiles)  
+
+#application exit button  
+exit_Button = Button(window,  text = "Exit", command = close_window)  
