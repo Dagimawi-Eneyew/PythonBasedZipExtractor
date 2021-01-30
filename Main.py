@@ -15,4 +15,13 @@ def selectFolder():
     folder_selected = filedialog.askdirectory() 
     #Assign the path to text label 
     path_Label.configure(text="Folder Selected: "+folder_selected) 
-       
+
+#Function to close the application window     
+def close_window (): 
+    '''Function to close the application window
+    Parameters: empty
+    Returns:
+    void
+    '''
+    window.destroy()   
+
