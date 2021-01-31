@@ -43,6 +43,22 @@ def extractZIP(rootPath):
     finally: 
         text_area.yview(END)
 
+#Function to display information about the application
+def messageDisplay():
+    '''Function to selct folder from file explorer
+        Parameters: empty
+        Returns:
+        void
+        '''
+    text_area.configure(state='normal')
+    text_area.insert("end","\n------------------------------------------------------------------------------------------------\n")
+    text_area.insert("end","                               About The Application \n")
+    text_area.insert("end","------------------------------------------------------------------------------------------------\n")
+    text_area.insert("end","ZipExtractor is a free license software originally developed for personal use. \nThis software can extract zip files by traversing each directory.\n Developer : Dagimawi Eneyew \n Verison: 1.0.0 \n")
+    text_area.configure(state='disabled')
+    text_area.yview(END)
+
+
 #function to explore and select folder
 def selectFolder(): 
     '''Function to selct folder from file explorer
