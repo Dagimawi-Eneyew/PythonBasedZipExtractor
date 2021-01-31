@@ -150,6 +150,15 @@ button_exit = Button(window,  width=12,
                      text="Exit",
                      command=close_window)
 
+#Adjusting the layout of the application using Grid Layout
+label_file_explorer.grid(column = 1, row = 1,sticky='w')  
+button_explore.grid(column = 1, row = 2) 
+button_extract.grid(column=1,row=2,sticky='e',padx=30)
+progress_Log.grid(column=1,row=3)
+text_area.grid(column=1,row=5)
+button_exit.grid(column = 1,row = 9,sticky='e',padx=30)
+button_about.grid(column = 1,row = 9,padx=30) 
+window.resizable(width=0,height=0)
 
 #Window main loop
 window.mainloop()
