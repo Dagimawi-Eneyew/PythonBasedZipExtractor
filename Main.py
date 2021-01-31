@@ -4,6 +4,12 @@ from tkinter import *
 from tkinter import filedialog 
 #import scrolled text
 from tkinter import scrolledtext
+import zipfile,fnmatch,os
+import traceback
+
+#global variable to hold the path
+global folder_selected
+folder_selected=''
 
 #function to explore and select folder
 def selectFolder(): 
