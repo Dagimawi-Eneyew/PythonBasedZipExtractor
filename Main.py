@@ -11,6 +11,38 @@ import traceback
 global folder_selected
 folder_selected=''
 
+#Function to extract zip files
+def extractZIP(rootPath):
+    '''Function to traverse directory and extract zip files
+    Parameters: rootPath (String)
+    Returns:
+    void
+    '''
+    text_area.configure(state='normal')
+    text_area.insert("end",folder_selected)
+    try:
+        pattern = '*.zip'
+        for root, dirs, files in os.walk(rootPath):
+            for filename in fnmatch.filter(files, pattern):
+                output=os.path.join(root, filename)+'  Extracted...'
+                zipfile.ZipFile(os.path.join(root, filename)).extractall(os.path.join(root, os.path.splitext(filename)[0]))
+                zipped_file = os.path.join(root, filename)
+                os.remove(zipped_file)
+                text_area.configure(state='normal')
+                text_area.insert("end",output+'\n\n')
+                text_area.configure(state='disabled')
+                
+    except Exception as e:
+        text_area.configure(state='normal')
+        text_area.insert("end","\n------------------------------------------------------------------------------------------------\n")
+        text_area.insert("end","                               Console Log (Error Report)\n")
+        text_area.insert("end","------------------------------------------------------------------------------------------------\n")
+        text_area.insert("end",str(traceback.format_exc())+"\n",'error')
+        text_area.tag_config('error', foreground='red')
+        text_area.configure(state='disabled')
+    finally: 
+        text_area.yview(END)
+
 #function to explore and select folder
 def selectFolder(): 
     '''Function to selct folder from file explorer
