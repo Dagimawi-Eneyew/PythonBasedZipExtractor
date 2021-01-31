@@ -59,6 +59,8 @@ def messageDisplay():
     text_area.yview(END)
 
 
+
+
 #function to explore and select folder
 def selectFolder(): 
     '''Function to selct folder from file explorer
@@ -66,10 +68,12 @@ def selectFolder():
     Returns:
     void
     '''
-    #open file explorer and grab the path
-    folder_selected = filedialog.askdirectory() 
-    #Assign the path to text label 
-    path_Label.configure(text="Folder Selected: "+folder_selected) 
+    global folder_selected
+    folder_selected = filedialog.askdirectory()  
+    # Change label contents 
+    folder_selected=folder_selected.replace('/',"\\")
+    #folder_selected=folder_selected.replace('\\',"\\\\")
+    label_file_explorer.configure(text="Folder Selected: "+folder_selected)  
 
 #Function to close the application window     
 def close_window (): 
